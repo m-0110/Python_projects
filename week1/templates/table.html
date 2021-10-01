@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Breeds</title>
+    <link rel="stylesheet" type="text/css" href="static\table.css">
+</head>
+<body>
+<h1>TABLE DOG BREEDS</h1>
+<table >
+    <tr>
+        {% for heading in index %}
+            <th>{{heading.upper()}}</th>
+        {% endfor %}
+    </tr>
+    {% for i in rows %}
+
+        <tr>
+             {% for j in index %}
+                <td>
+                    {% if j in i %}
+                        {% if j=='bred_for' or j=='origin' %}
+                            <ul>
+                                {% for k in i[j] %}
+                                    {% if(k) %}
+                                        <li>
+
+                                            {{k}}
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        {% elif(j=='image-url') %}
+                            <img src="{{i[j]}}"></img>
+                        {% else %}
+                            {{i[j]}}
+                        {%endif%}
+
+                    {% endif %}
+
+                </td>
+            {% endfor %}
+
+
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+</body>
+</html>
