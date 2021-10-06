@@ -1,7 +1,7 @@
 '''
 PROGRAM DESCRIPTION:
 
-create sudoko game using numpy module and oops concept
+create sudoku game using numpy module and oops concept
 '''
 
 #PROGRAMMED BY: Modika Ishwarya
@@ -16,7 +16,7 @@ create sudoko game using numpy module and oops concept
 
 import numpy as np
 
-class suduko:
+class sudoku:
 
     #checking value n is  present in row column or block
     def isSafe(self,board,i,j,n):
@@ -125,7 +125,7 @@ board=np.array(   [
 ])
 
 
-obj=suduko()
+obj=sudoku()
 
 #print initial sudoko
 print('--------------initial board-------------')
